@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 
 import Header from '../components/Header'
 
-export default ({ site, frontmatter = {}, children }) => {
+export default ({ site, categories, frontmatter = {}, children }) => {
   const {
     title,
     description: siteDescription,
@@ -31,7 +31,7 @@ export default ({ site, frontmatter = {}, children }) => {
         <html lang="en" />
       </Helmet>
       <Fragment>
-        <Header />
+        <Header categories={categories} />
 
         {children}
       </Fragment>

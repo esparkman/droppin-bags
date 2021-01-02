@@ -4,18 +4,18 @@ import { graphql } from 'gatsby';
 import Article from '../components/Article'
 import Layout from '../components/Layout';
 
-const Index = ({
+const Profiles = ({
   data: { site, allMdx },
-  pageContext: { categories },
+  pageContext: { pagination },
 }) => {
   // const { page } = pagination;
 
-  // const posts = allMdx.map(id =>
+  // const posts = page.map(id =>
   //   allMdx.edges.find(edge => edge.node.id === id),
   // );
 
   return (
-    <Layout site={site} categories={categories}>
+    <Layout site={site}>
       <section className="content">
         <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
           {' '}
@@ -47,14 +47,14 @@ const Index = ({
   );
 };
 
-export default Index;
+export default Profiles;
 
 export const pageQuery = graphql`
   query {
     site {
       ...site
     }
-    allMdx(sort: {order: DESC, fields: frontmatter___date}) {
+    allMdx(sort: {order: DESC, fields: frontmatter___date}, filter: {frontmatter: {categories: {eq: "player profile"}}}) {
       edges {
         node {
           excerpt(pruneLength: 300)

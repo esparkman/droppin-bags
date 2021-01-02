@@ -1,6 +1,6 @@
 const path = require('path');
 
-const PAGINATION_OFFSET = 2;
+const PAGINATION_OFFSET = 100;
 
 const pluckCategories = (edges) =>
   Object.keys(
@@ -62,6 +62,23 @@ const createBlog = (createPage, edges) => {
   const categories = pluckCategories(edges);
 
   createPaginatedPages(createPage, edges, '/', { categories });
+};
+
+const createArticle = (createPage, edges) => {
+  edges.forEach(({ node }, i) => {
+    const prev = i === 0 ? null : edges[i - 1].node;
+    const next = i === edges.length - 1 ? null : edges[i + 1].node;
+
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/templates/articles.js`),
+      context: {
+        id: node.id,
+        prev,
+        next,
+      },
+    });
+  });
 };
 
 const createPaginatedPages = (
@@ -130,6 +147,7 @@ exports.createPages = ({ actions, graphql }) =>
 
     const { edges } = data.allMdx;
 
+    createArticle(actions.createPage, edges);
     createBlog(actions.createPage, edges);
     createPosts(actions.createPage, edges);
     createCategoryPages(actions.createPage, edges);

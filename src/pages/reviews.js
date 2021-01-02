@@ -54,7 +54,7 @@ export const pageQuery = graphql`
     site {
       ...site
     }
-    allMdx(sort: {order: DESC, fields: frontmatter___date}) {
+    allMdx(sort: {order: DESC, fields: frontmatter___date}, , filter: {frontmatter: {categories: {eq: "review"}}}) {
       edges {
         node {
           excerpt(pruneLength: 300)

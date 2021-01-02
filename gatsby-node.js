@@ -61,7 +61,7 @@ const createPosts = (createPage, edges) => {
 const createBlog = (createPage, edges) => {
   const categories = pluckCategories(edges);
 
-  createPaginatedPages(createPage, edges, '/blog', { categories });
+  createPaginatedPages(createPage, edges, '/', { categories });
 };
 
 const createPaginatedPages = (
@@ -89,7 +89,7 @@ const createPaginatedPages = (
 
     createPage({
       path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
-      component: path.resolve(`src/templates/blog.js`),
+      component: path.resolve(`src/templates/index.js`),
       context: {
         pagination: {
           page,

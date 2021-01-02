@@ -38,13 +38,13 @@ export default function Header() {
               </Link>
             </div>
             <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
-              <Link to="/articles" className="border-gray-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              <Link to="/articles" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" activeClassName="border-gray-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                 Articles
               </Link>
-              <Link to="/reviews" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              <Link to="/reviews" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" activeClassName="border-gray-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                 Reviews
               </Link>
-              <Link to="/profiles" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              <Link to="/profiles" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" activeClassName="border-gray-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                   Player Profiles
               </Link>
             </div>
@@ -127,13 +127,13 @@ export default function Header() {
       {showMobileMenu ? (
         <div className="block lg:hidden">
           <div className="pt-2 pb-3 space-y-1">
-            <Link to="/" className="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+            <Link to="/articles" className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" activeClassName="bg-indigo-50 border-gray-700 text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
               Articles
             </Link>
-            <Link to="/" className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+            <Link to="/reviews" className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" activeClassName="bg-indigo-50 border-gray-700 text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
               Reviews
             </Link>
-            <Link to="/" className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+            <Link to="/profiles" className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" activeClassName="bg-indigo-50 border-gray-700 text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
               Player Profiles
             </Link>
           </div>
